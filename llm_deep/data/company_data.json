@@ -1,0 +1,122 @@
+{
+    "Viajes Felices": {
+        "descripcion": "Viajes Felices es una agencia de turismo con más de 10 años de experiencia ofreciendo paquetes de viaje personalizados a destinos nacionales e internacionales.",
+        "servicios": [
+            "Reservación de vuelos y hoteles",
+            "Tours guiados",
+            "Alquiler de autos",
+            "Asesoría para visas y documentación"
+        ],
+        "horarios": {
+            "lunes-viernes": "9:00 AM - 6:00 PM",
+            "sábado": "10:00 AM - 2:00 PM",
+            "domingo": "Cerrado"
+        },
+        "contacto": {
+            "telefono": "+57 312 345 6789",
+            "email": "contacto@viajesfelices.com",
+            "direccion": "Calle 45 #12-34, Bogotá, Colombia"
+        },
+        "faq": {
+            "¿Cuáles son los destinos más populares?": "Nuestros destinos más populares incluyen Cartagena, San Andrés, París y Nueva York.",
+            "¿Ofrecen descuentos para grupos?": "Sí, tenemos paquetes especiales con descuentos para grupos de más de 5 personas.",
+            "¿Se pueden reservar paquetes todo incluido?": "Sí, contamos con opciones todo incluido en varios destinos."
+        }
+    },
+    "Soluciones Tecnologicas": {
+        "descripcion": "Soluciones Tecnologicas es una empresa especializada en soluciones de software y tecnología para pequeñas y medianas empresas.",
+        "servicios": [
+            "Desarrollo de software a medida",
+            "Implementación de ERP y CRM",
+            "Consultoría en ciberseguridad",
+            "Soporte técnico 24/7"
+        ],
+        "horarios": {
+            "lunes-viernes": "8:00 AM - 7:00 PM",
+            "sábado": "9:00 AM - 1:00 PM",
+            "domingo": "Cerrado"
+        },
+        "contacto": {
+            "telefono": "+57 310 987 6543",
+            "email": "soporte@techsolutions.com",
+            "direccion": "Av. 10 #20-30, Medellín, Colombia"
+        },
+        "faq": {
+            "¿Cómo puedo contratar un desarrollo a medida?": "Puedes agendar una cita con nuestro equipo técnico a través de nuestra página web o llamarnos directamente.",
+            "¿Ofrecen servicios de hosting?": "Sí, contamos con servidores dedicados y hosting en la nube con alta disponibilidad.",
+            "¿Puedo solicitar soporte técnico en cualquier horario?": "Sí, ofrecemos soporte 24/7 para nuestros clientes con contrato de mantenimiento."
+        }
+    },
+    "Salud y Vida": {
+        "descripcion": "Salud y Vida es una empresa dedicada a la salud y bienestar con productos naturales y asesorías personalizadas.",
+        "servicios": [
+            "Venta de suplementos naturales",
+            "Planes de alimentación personalizada",
+            "Terapias de relajación y bienestar",
+            "Asesoría en hábitos saludables"
+        ],
+        "horarios": {
+            "lunes-viernes": "9:00 AM - 5:00 PM",
+            "sábado": "10:00 AM - 3:00 PM",
+            "domingo": "Cerrado"
+        },
+        "contacto": {
+            "telefono": "+57 320 456 7890",
+            "email": "info@healthylife.com",
+            "direccion": "Carrera 50 #15-20, Cali, Colombia"
+        },
+        "faq": {
+            "¿Qué tipo de suplementos venden?": "Vendemos suplementos naturales para la salud digestiva, inmunológica y deportiva.",
+            "¿Cómo puedo agendar una consulta nutricional?": "Puedes reservar una cita a través de nuestra web o llamando a nuestra línea de atención.",
+            "¿Tienen envíos nacionales?": "Sí, realizamos envíos a cualquier parte de Colombia."
+        }
+    },
+    "Telecom": {
+        "descripcion": "Telecom es un proveedor líder de servicios de telecomunicaciones, ofreciendo televisión, internet y telefonía a nivel nacional.",
+        "servicios": [
+            "Planes de Internet de alta velocidad",
+            "Televisión por cable y streaming",
+            "Telefonía móvil y fija",
+            "Paquetes combinados con descuentos"
+        ],
+        "horarios": {
+            "lunes-viernes": "8:00 AM - 8:00 PM",
+            "sábado": "9:00 AM - 6:00 PM",
+            "domingo": "Cerrado"
+        },
+        "contacto": {
+            "telefono": "+57 300 123 4567",
+            "email": "soporte@telecom.com",
+            "direccion": "Calle 50 #10-20, Bogotá, Colombia"
+        },
+        "faq": {
+            "¿Cuáles son los planes de internet disponibles?": "Ofrecemos planes de 100MB, 300MB y 1GB con fibra óptica.",
+            "¿Tienen soporte técnico 24/7?": "Sí, nuestro soporte técnico está disponible las 24 horas del día para clientes con servicio activo.",
+            "¿Cómo puedo pagar mi factura?": "Puedes pagar en línea, en bancos aliados o mediante nuestra app móvil.",
+            "¿Tienen promociones vigentes?": "Sí, ofrecemos descuentos para nuevos clientes y paquetes combinados de internet + TV."
+        }
+    },
+    "Ecomoda": {
+        "descripcion": "Empresa de textiles, que esta en la vanguardia de la moda en colombia, se trabaja con las mejores telas para la creacion de diseños y vestidos para mujeres y hombres",
+        "servicios": [
+            "Venta de ropa",
+            "Importancion de telas finas",
+            "Modelaje y pasarela",
+            "Venta de tela fina"
+        ],
+        "horarios": {
+            "lunes-viernes": "9:00 AM - 6:00 PM",
+            "sábado": "10:00 AM - 2:00 PM",
+            "domingo": "Cerrado"
+        },
+        "contacto": {
+            "telefono": "+57 312 345 6789",
+            "email": "contacto@ecomoda.com",
+            "direccion": "Calle 45 #12-34, Bogotá, Colombia"
+        },
+        "faq": {
+            "¿Ofrecen descuentos ?": "Sí, tenemos paquetes especiales para empresas textiles",
+            "¿Cuáles  es la ropa mas popular?": "La ropa más popular es la diseñada por hugo lombardi..."
+        }
+    }
+}
