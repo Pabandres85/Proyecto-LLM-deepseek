@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
 import os
-import base64
-import datetime
+import re
+from collections import Counter
+
+# Para WordCloud
+from wordcloud import WordCloud, STOPWORDS
+import matplotlib.pyplot as plt
 
 def main():
     st.title("Dashboard Chatbot de Servicio al Cliente")
@@ -10,7 +14,7 @@ def main():
     # Ruta hacia tu archivo CSV de interacciones
     log_file_path = os.path.join("log", "chat_log.csv")
 
-    # Verificacion 
+    # Verificación de la existencia del archivo
     if not os.path.exists(log_file_path):
         st.warning("No hay registro de interacciones (chat_log.csv) todavía.")
         return
@@ -18,25 +22,29 @@ def main():
     # Cargar datos en un DataFrame
     df = pd.read_csv(log_file_path)
 
-    # Verificar que las columnas clave existan
-    required_columns = ["Fecha y Hora", "Empresa", "Usuario", "Chatbot", "Feedback"]
-    missing_cols = [col for col in required_columns if col not in df.columns]
-    if missing_cols:
-        st.error(f"Faltan las columnas requeridas en el CSV: {missing_cols}")
-        return
+    # Revisar si existen las columnas críticas
+    expected_cols = ["Fecha y Hora", "Empresa", "Usuario", "Chatbot", "Feedback"]
+    for col in expected_cols:
+        if col not in df.columns:
+            st.error(f"Falta la columna '{col}' en el CSV. Revisa la estructura.")
+            return
 
-    # Convertir la columna "Fecha y Hora" a datetime
+    # Mostrar la tabla completa (opcional: en un expander)
+    with st.expander("Ver tabla completa sin filtrar"):
+        st.subheader("Tabla de datos (completa)")
+        st.dataframe(df, use_container_width=True)
+
+    # Convertir a datetime y limpiar
     df["Fecha y Hora"] = pd.to_datetime(df["Fecha y Hora"], errors="coerce")
-    # Eliminar filas con fechas inválidas
     df = df.dropna(subset=["Fecha y Hora"])
 
-    # -----------------------------------------------------
-    # FILTROS
-    # -----------------------------------------------------
-    # Filtro por rango de fechas
+    # -------------------------------
+    # FILTRO POR RANGO DE FECHAS
+    # -------------------------------
     st.subheader("Filtrar por fecha")
     min_date = df["Fecha y Hora"].min().date()
     max_date = df["Fecha y Hora"].max().date()
+
     start_date, end_date = st.date_input(
         "Selecciona rango de fechas",
         (min_date, max_date)
@@ -45,72 +53,99 @@ def main():
         st.error("La fecha de inicio es mayor que la de fin.")
         return
 
-    # Filtro por empresa (multiselect, por si quieres ver varias a la vez)
-    st.subheader("Filtrar por empresa")
-    empresas_unicas = df["Empresa"].unique().tolist()
-    selected_empresas = st.multiselect("Selecciona una o varias empresas",
-                                       options=empresas_unicas,
-                                       default=empresas_unicas)
+    # Aplicar el filtro
+    mask = (df["Fecha y Hora"].dt.date >= start_date) & \
+           (df["Fecha y Hora"].dt.date <= end_date)
+    filtered_df = df[mask]
+    st.write(f"Total interacciones en el rango: {len(filtered_df)}")
 
-    # Aplicar filtros
-    mask_fecha = (df["Fecha y Hora"].dt.date >= start_date) & \
-                 (df["Fecha y Hora"].dt.date <= end_date)
-    mask_empresa = df["Empresa"].isin(selected_empresas)
-    df_filtered = df[mask_fecha & mask_empresa]
-
-    st.write(f"Total interacciones en el rango y empresas seleccionadas: {len(df_filtered)}")
-
-    # Mostrar la tabla filtrada (opcional: con scroll horizontal)
+    # Mostrar la tabla filtrada en un expander
     with st.expander("Ver datos filtrados"):
-        st.dataframe(df_filtered, use_container_width=True)
+        st.dataframe(filtered_df, use_container_width=True)
 
-    # -----------------------------------------------------
-    # GRÁFICO DE FEEDBACK
-    # -----------------------------------------------------
-    st.subheader("Estadísticas de feedback")
-    if not df_filtered.empty:
-        feedback_counts = df_filtered["Feedback"].value_counts()
+    # -------------------------------
+    # ESTADÍSTICAS DE FEEDBACK
+    # -------------------------------
+    st.subheader("Estadísticas de feedback (Datos Filtrados)")
+    if not filtered_df.empty:
+        feedback_counts = filtered_df["Feedback"].value_counts()
         st.bar_chart(feedback_counts)
     else:
-        st.info("No hay datos que mostrar con los filtros actuales.")
+        st.info("No hay datos para mostrar (filtrados).")
 
-    # Feedback por empresa
-    st.subheader("Feedback por empresa")
-    if not df_filtered.empty:
-        # Podemos agrupar y contar
-        feedback_by_company = df_filtered.groupby(["Empresa", "Feedback"]).size().unstack(fill_value=0)
-        st.write(feedback_by_company)
-
-        # Mostrar un gráfico de barras apiladas:
-        st.bar_chart(feedback_by_company)
+    # -------------------------------
+    # INTERACCIONES POR EMPRESA
+    # -------------------------------
+    st.subheader("Interacciones por Empresa (Datos Filtrados)")
+    if not filtered_df.empty:
+        empresa_counts = filtered_df["Empresa"].value_counts()
+        st.bar_chart(empresa_counts)
     else:
-        st.info("No hay datos para mostrar feedback por empresa.")
+        st.info("No hay datos para mostrar (filtrados).")
 
-    # -----------------------------------------------------
-    # GRÁFICO DE USO EN EL TIEMPO
-    # -----------------------------------------------------
-    st.subheader("Interacciones a lo largo del tiempo")
-    if not df_filtered.empty:
-        # Agrupamos por fecha (sin hora) y contamos
-        daily_counts = df_filtered.groupby(df_filtered["Fecha y Hora"].dt.date).size()
-        daily_counts.index = pd.to_datetime(daily_counts.index)  # Convertir a datetime para graficar
-        daily_counts = daily_counts.sort_index()
-        st.line_chart(daily_counts)
-    else:
-        st.info("No hay datos para graficar en el tiempo con los filtros actuales.")
+    # -------------------------------
+    # ANÁLISIS DE TEXTO (PALABRAS FRECUENTES) EN "Usuario"
+    # -------------------------------
+    st.subheader("Análisis de Texto en la columna 'Usuario'")
 
-    # -----------------------------------------------------
-    # DESCARGAR CSV FILTRADO
-    # -----------------------------------------------------
-    def download_csv(dataframe):
-        csv_data = dataframe.to_csv(index=False)
-        b64 = base64.b64encode(csv_data.encode()).decode()
-        href = f'<a href="data:file/csv;base64,{b64}" download="interacciones_filtradas.csv">Descargar CSV Filtrado</a>'
-        return href
+    if filtered_df.empty:
+        st.info("No hay datos para análisis de texto con el filtro actual.")
+        return
 
-    if not df_filtered.empty:
-        st.subheader("Descargar datos filtrados")
-        st.markdown(download_csv(df_filtered), unsafe_allow_html=True)
+    # Unir todo el texto de la columna "Usuario"
+    all_text = " ".join(str(x) for x in filtered_df["Usuario"].dropna())
 
+    # Limpieza básica (regex): 
+    # - minúsculas
+    # - quitar caracteres que no sean letras/ números/ tildes
+    text_clean = re.sub(r"[^\wáéíóúñA-Za-z]+", " ", all_text.lower())
+    tokens = text_clean.split()
+
+    # Stopwords en español (básicas)
+    stopwords_es = {
+        "de","la","que","el","en","y","a","los","del","se","las","un","por","con",
+        "para","su","una","al","lo","como","más","o","pero","sus","le","ya","o",
+        "sí","sobre","me","si","sin","este","entre","cuando","también","voy","tu",
+        "mis","muy","no","es","son","cada","donde","haber","todos","antes","te",
+        "está","estás","están","he","ha","hay","fue","fui","fueron"
+    }
+    tokens = [t for t in tokens if t not in stopwords_es]
+
+    if not tokens:
+        st.info("Tras la limpieza y eliminación de stopwords, no quedó nada que mostrar.")
+        return
+
+    # Contar frecuencia
+    freq = Counter(tokens)
+    most_common = freq.most_common(20)  # Top 20
+
+    st.write("Top 20 palabras más frecuentes (datos filtrados):")
+    df_freq = pd.DataFrame(most_common, columns=["Palabra", "Frecuencia"])
+    st.table(df_freq)
+
+    # Gráfico de barras
+    st.bar_chart(data=df_freq.set_index("Palabra"))
+
+    # -------------------------------
+    # WORDCLOUD
+    # -------------------------------
+    st.subheader("Nube de Palabras (WordCloud)")
+
+    wc_stopwords = set(STOPWORDS)
+    wc_stopwords.update(stopwords_es)
+    wordcloud = WordCloud(
+        background_color="white",
+        max_words=100,
+        stopwords=wc_stopwords,
+        width=800,
+        height=400
+    ).generate(" ".join(tokens))
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.imshow(wordcloud, interpolation="bilinear")
+    ax.axis("off")
+    st.pyplot(fig)
+
+# Llamamos la función principal
 if __name__ == "__main__":
     main()
