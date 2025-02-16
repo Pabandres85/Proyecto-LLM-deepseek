@@ -15,14 +15,18 @@ Este es un chatbot inteligente diseñado para **adaptarse a cualquier empresa** 
 ---
 
 ## 📌 Interfaz
-- 📌 **Pagina principal**
-![Interfaz del Chatbot](images/interfacePagina.png)
-- 📌 **Pagina Agregar Empresa**
-![Interfaz del Chatbot](images/agregarEmpresa.png)
-- 📌 **Pagina Mantenimiento de Empresas Agregadas**
-![Interfaz del Chatbot](images/admonEmpresas.png)
-- 📌 **Pagina Analitica**
-![Interfaz del Chatbot](images/analitica.png)
+
+- 📌 **Página Principal**  
+<img src="images/interfacePagina.png" alt="Interfaz del Chatbot" width="600"/>
+
+- 📌 **Página Agregar Empresa**  
+<img src="images/agregarEmpresa.png" alt="Agregar Empresa" width="600"/>
+
+- 📌 **Página Mantenimiento de Empresas Agregadas**  
+<img src="images/admonEmpresas.png" alt="Mantenimiento de Empresas" width="600"/>
+
+- 📌 **Página Analítica**  
+<img src="images/analitica.png" alt="Analítica" width="600"/>
 
 ---
 
