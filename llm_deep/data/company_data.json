@@ -5,6 +5,7 @@
             "Reservación de vuelos y hoteles",
             "Tours guiados",
             "Alquiler de autos",
+            "Tiquetes de avion",
             "Asesoría para visas y documentación"
         ],
         "horarios": {
@@ -117,6 +118,28 @@
         "faq": {
             "¿Ofrecen descuentos ?": "Sí, tenemos paquetes especiales para empresas textiles",
             "¿Cuáles  es la ropa mas popular?": "La ropa más popular es la diseñada por hugo lombardi..."
+        }
+    },
+    "Postobon": {
+        "descripcion": "Postobón es una empresa colombiana de bebidas azucaradas con sede en Medellín. Es una de las empresas más grandes de Colombia y una de las principales en América del Sur. Cuenta con una amplia gama de productos compuesta por bebidas ligeras y alcohólicas, bebidas de fruta, aguas, otras de nueva generación (tés, energizantes e hidratantes), salsas, aderezos, frutos secos, sazonadoras, snacks y mermelada",
+        "servicios": [
+            "Venta de bebidas azucaradas",
+            "Transporte de bebidas",
+            "Logistica"
+        ],
+        "horarios": {
+            "lunes-viernes": "9:00 AM - 6:00 PM",
+            "sábado": "10:00 AM - 2:00 PM",
+            "domingo": "Cerrado"
+        },
+        "contacto": {
+            "telefono": "+57 312 345 6789",
+            "email": "contacto@postobon.com",
+            "direccion": "Calle 45 #12-34, Medellin, Colombia"
+        },
+        "faq": {
+            "¿Ofrecen descuentos para grupos?": "Sí, tenemos paquetes especiales...",
+            "¿Cuáles son las bebidas mas populares?": "las bebidas mas populares son colombiana, pepsi.."
         }
     }
 }

@@ -57,7 +57,7 @@ def enviar_mensaje():
         time.sleep(1)
 
     # Llamada a la API
-    url = "http://172.29.64.1:1234/v1/chat/completions"
+    url = "http://192.168.10.13:1234/v1/chat/completions"
     payload = {
         "model": "deepspeek-r1-distill-qwen-7b",
         "messages": [

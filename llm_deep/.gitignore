@@ -1,0 +1,33 @@
+# Ignorar entornos virtuales
+venv/
+venv*/   # Por si el nombre varía
+
+# Ignorar archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar archivos de dependencias de entorno
+*.env
+.env
+*.venv
+*.log
+
+# Ignorar archivos de configuración de IDEs
+.vscode/
+.idea/
+*.iml
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar dependencias generadas automáticamente
+*.egg-info/
+dist/
+build/
+
+# Ignorar bases de datos SQLite (si las usas en desarrollo)
+*.sqlite3
+*.db
