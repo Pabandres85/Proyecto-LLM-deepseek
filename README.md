@@ -56,23 +56,7 @@ El chatbot envía consultas al **servidor local**, el cual procesa las solicitud
 
 ## 📂 Estructura del Proyecto
 
-📦 proyecto_chatbot_ia
-├── 📂 pages/                # Módulos de la aplicación
-│   ├── add_company.py       # Módulo para agregar empresas
-│   ├── analytics.py         # Análisis de datos de las interacciones
-│   ├── manage_companies.py  # Administración de empresas
-│
-├── app.py                   # Punto de entrada de la aplicación (selección de empresa y chatbot)
-│
-├── requirements.txt         # Dependencias del proyecto
-├── .gitignore               # Archivos a ignorar en Git
-├── README.md                # Documentación del proyecto
-│
-├── 📂 data/                 # Base de datos de empresas e interacciones
-│   ├── company_data.json    # Información de empresas
-│   ├── chat_log.csv         # Historial de conversación
-│
-├── 📂 log/                  # Logs del sistema
+ ![Analítica](llm_deep/images/estructura.png)
 
 
 ---
