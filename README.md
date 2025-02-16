@@ -17,16 +17,16 @@ Este es un chatbot inteligente diseñado para **adaptarse a cualquier empresa** 
 ## 📌 Interfaz
 
 - 📌 **Página Principal**  
-<img src="images/interfacePagina.png" alt="Interfaz del Chatbot" width="600"/>
+  ![Interfaz del Chatbot](llm_deep/images/interfacePagina.png)
 
 - 📌 **Página Agregar Empresa**  
-<img src="images/agregarEmpresa.png" alt="Agregar Empresa" width="600"/>
+  ![Agregar Empresa](llm_deep/images/agregarEmpresa.png)
 
 - 📌 **Página Mantenimiento de Empresas Agregadas**  
-<img src="images/admonEmpresas.png" alt="Mantenimiento de Empresas" width="600"/>
+  ![Mantenimiento de Empresas](llm_deep/images/admonEmpresas.png)
 
 - 📌 **Página Analítica**  
-<img src="images/analitica.png" alt="Analítica" width="600"/>
+  ![Analítica](llm_deep/images/analitica.png)
 
 ---
 
