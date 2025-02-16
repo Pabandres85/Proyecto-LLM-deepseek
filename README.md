@@ -14,6 +14,18 @@ Este es un chatbot inteligente diseñado para **adaptarse a cualquier empresa** 
 
 ---
 
+## 📌 Interfaz
+- 📌 **Pagina principal**
+![Interfaz del Chatbot](images/interfacePagina.png)
+- 📌 **Pagina Agregar Empresa**
+![Interfaz del Chatbot](images/agregarEmpresa.png)
+- 📌 **Pagina Mantenimiento de Empresas Agregadas**
+![Interfaz del Chatbot](images/admonEmpresas.png)
+- 📌 **Pagina Analitica**
+![Interfaz del Chatbot](images/analitica.png)
+
+---
+
 ## ⚙️ Modelo de IA y Servidor Local
 
 El chatbot utiliza un **modelo de lenguaje alojado localmente**, cargado en **LM Studio** como un servidor API.  
@@ -65,8 +77,8 @@ El chatbot envía consultas al **servidor local**, el cual procesa las solicitud
 
 ### 📌 **1. Clonar el repositorio**
 ```sh
-git clone https://github.com/tu_usuario/chatbot_ia_cliente.git
-cd chatbot_ia_cliente
+git clone https://github.com/Pabandres85/Proyecto-LLM-deepseek
+cd Proyecto-LLM-deepseek
 
 ```
 ### 📌 **2. Crear y activar un entorno virtual**
