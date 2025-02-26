@@ -86,6 +86,9 @@ La aplicación sigue una arquitectura modular que facilita el mantenimiento y la
 - **Services** - Maneja la comunicación con el LLM y la gestión de datos empresariales.
 - **Models** - Define estructuras para el historial de chat y otros datos.
 - **Pages** - Páginas adicionales para gestión de empresas y análisis de datos.
+- **Tests** - Pruebas unitarias que verifican el correcto funcionamiento de cada componente.
+- **GitHub Actions** - Integración continua para ejecutar pruebas automáticamente al realizar cambios.
+
 ---
 
 ## 🔧 Instalación y Configuración
@@ -153,7 +156,7 @@ Para ejecutar las pruebas, sigue estos pasos:
 
 1. **Instala las dependencias de prueba**:
    ```sh
-   pip install -r requirements-test.txt
+   pip install -r requirements.txt
    ```
 
 2. **Ejecuta las pruebas con cobertura**:
