@@ -7,7 +7,7 @@
 
 - Pablo Andrés Muñoz Martínez  -   **Código**: 2244676
 
-- Lady Yasmin Hoyos Parra - **Código**: 2245224 
+- Leidy Yasmin Hoyos Parra - **Código**: 2245224 
                 
 - Johan David Mendoza Vargas  - **Código**: 2245019
                 
@@ -132,6 +132,60 @@ Esto abrirá la aplicación en el navegador.
 4. **Consulta el análisis de datos** para evaluar el rendimiento del chatbot.
 
 ---
+## 🧪 Pruebas Unitarias
+
+Este proyecto incluye pruebas unitarias para verificar el correcto funcionamiento de sus componentes. Las pruebas están organizadas siguiendo la misma estructura modular del proyecto.
+
+### Estructura de pruebas
+
+```
+tests/
+├── __init__.py
+├── conftest.py                    # Configuraciones y fixtures compartidos
+├── test_utils/                    # Pruebas para utilidades
+├── test_services/                 # Pruebas para servicios
+└── test_models/                   # Pruebas para modelos
+```
+
+### Ejecución de pruebas
+
+Para ejecutar las pruebas, sigue estos pasos:
+
+1. **Instala las dependencias de prueba**:
+   ```sh
+   pip install -r requirements-test.txt
+   ```
+
+2. **Ejecuta las pruebas con cobertura**:
+   ```sh
+   python run_tests.py
+   ```
+   O alternativamente:
+   ```sh
+   pytest tests/ -v --cov=utils --cov=services --cov=models --cov-report=term --cov-report=html:coverage_html
+   ```
+
+3. **Revisa los resultados**:
+   - Los resultados se mostrarán en la terminal
+   - Un reporte detallado de cobertura estará disponible en el directorio `coverage_html`
+
+### Cobertura de código
+
+Las pruebas están diseñadas para cubrir:
+- Lógica de servicios (comunicación con la API, gestión de datos)
+- Modelos de datos (historial de chat)
+- Utilidades (configuración, logging, UI)
+
+### Escribir nuevas pruebas
+
+Si agregas nuevas funcionalidades, asegúrate de incluir pruebas correspondientes siguiendo el mismo patrón:
+
+1. Crea un nuevo archivo de prueba en el directorio adecuado (test_utils, test_services, test_models)
+2. Utiliza el patrón de nomenclatura `test_*.py` para el archivo
+3. Define funciones con prefijo `test_` para cada caso de prueba
+4. Utiliza los fixtures definidos en `conftest.py` para configuraciones comunes
+
+---
 
 ## 📌 Mejoras Futuras
 
@@ -145,4 +199,8 @@ Esto abrirá la aplicación en el navegador.
 
 ¡Las contribuciones son bienvenidas! Si quieres mejorar el chatbot, abre un **issue** o envía un **pull request**.
 
-📩 **Contacto**: pabandres
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
+
+📩 **Contacto**: @pabandres85
