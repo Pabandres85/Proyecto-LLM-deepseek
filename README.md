@@ -13,6 +13,7 @@
                 
 - Yineth Tatiana Hernández Narvaez  -  **Código**: 2244789 
                 
+---
 
 # 🤖 Chatbot de Servicio al Cliente con IA
 
