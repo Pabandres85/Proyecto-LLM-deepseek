@@ -93,7 +93,13 @@ venv\Scripts\activate     # En Windows
 ```sh
 pip install -r requirements.txt 
 ```
-### 📌 **4. Ejecutar la aplicación**
+
+### 📌 **4. Configurar server local desde LM studio u Ollama.**
+cargar modelo descargado previamente al LM studio u Ollama y crear servidor local con API desde ese entorno 
+ **Modelo a Cargar:** `deepseek-coder-v2-lite-instruct`
+Copiar endpoint dado por el gestor de LLMs y pegarlo en /utils/config.py en la variable **API_URL**
+
+### 📌 **5. Ejecutar la aplicación**
 ```sh
 streamlit run app.py
 ```
