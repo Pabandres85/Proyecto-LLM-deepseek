@@ -1,3 +1,19 @@
+
+# Especializacion en IA UAO
+
+## Grupo 3
+
+## Integrantes: 
+
+- Pablo Andrés Muñoz Martínez  -   **Código**: 2244676
+
+- Lady Yasmin Hoyos Parra - **Código**: 2245224 
+                
+- Johan David Mendoza Vargas  - **Código**: 2245019
+                
+- Yineth Tatiana Hernández Narvaez  -  **Código**: 2244789 
+                
+
 # 🤖 Chatbot de Servicio al Cliente con IA
 
 Este es un chatbot inteligente diseñado para **adaptarse a cualquier empresa** y ofrecer un servicio al cliente personalizado. Permite a los usuarios seleccionar una empresa previamente registrada y obtener respuestas automáticas basadas en la información de dicha empresa.
