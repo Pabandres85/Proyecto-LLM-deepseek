@@ -63,11 +63,12 @@ La aplicación sigue una arquitectura modular que facilita el mantenimiento y la
  ![Estructura](llm_deep/images/estructura.png)
 
 ### **Componentes Principales**
-**App Principal**: Integra todos los componentes y gestiona el flujo de la conversación.
-**Utils**: Contiene utilidades como configuración, logging y componentes UI reutilizables.
-**Services**: Maneja la comunicación con el LLM y la gestión de datos empresariales.
-**Models**: Define estructuras para el historial de chat y otros datos.
-**Pages**: Páginas adicionales para gestión de empresas y análisis de datos.
+
+- **App Principal** - Integra todos los componentes y gestiona el flujo de la conversación.
+- **Utils**  - Contiene utilidades como configuración, logging y componentes UI reutilizables.
+- **Services** - Maneja la comunicación con el LLM y la gestión de datos empresariales.
+- **Models** - Define estructuras para el historial de chat y otros datos.
+- **Pages** - Páginas adicionales para gestión de empresas y análisis de datos.
 ---
 
 ## 🔧 Instalación y Configuración
