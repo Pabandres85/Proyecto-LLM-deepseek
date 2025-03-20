@@ -1,17 +1,4 @@
 
-# Especializacion en IA UAO
-
-## Grupo 3
-
-## Integrantes: 
-
-- Pablo Andrés Muñoz Martínez  -   **Código**: 2244676
-
-- Leidy Yasmin Hoyos Parra - **Código**: 2245224 
-                
-- Johan David Mendoza Vargas  - **Código**: 2245019
-                
-- Yineth Tatiana Hernández Narvaez  -  **Código**: 2244789 
                 
 ---
 
